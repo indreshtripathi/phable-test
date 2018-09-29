@@ -33,7 +33,7 @@ DBOperations.prototype.createConnection =  function () {
 },
 
 DBOperations.prototype.closeConnection =  function () {
-    database.close();
+    this.connection.close();
 },
 
 DBOperations.prototype.insertRows =  function (tableName, records) {
@@ -44,7 +44,7 @@ DBOperations.prototype.findAll =  function() {
     return this.connection.collection(tableName).find({});
 },
 
-DBOperations.prototype.updateRows =  function (query, records) {
+DBOperations.prototype.updateRows =  function (tableName, query, records) {
     return this.connection.collection(tableName).updateOne(query, records);
 }
 

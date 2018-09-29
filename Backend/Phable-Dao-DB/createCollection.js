@@ -3,7 +3,7 @@ var url = "mongodb://localhost:27017/";
 
 MongoClient.connect(url)
     .then((db) => {
-        var dbo = db.db("mydb");
+        var dbo = db.db("GDB");
         dbo.createCollection("userDetails").then(()=>{console.log('collection created')});
         dbo.createCollection("authDB").then(()=>{console.log('collection created')});
         dbo.createCollection("sessionDB").then(()=>{console.log('collection created')});
